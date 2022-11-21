@@ -3,11 +3,13 @@ const { Schema } = require("mongoose");
 
 const boardShema = new Schema({
     name: {
-        ref:'boardName',
-        type: Schema.Types.ObjectId,
+        type: String,
         require: true
     },
-    //timestamps: true
+    date: {
+        type: Date,
+        default: Date.now
+    }
 })
 
 module.exports = mongoose.model('board', boardShema)
